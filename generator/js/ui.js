@@ -204,8 +204,8 @@ function ui_render_selected_card() {
     $('#preview-container').empty();
     if (card) {
         var front = card_generate_front(card, card_options);
-        var back = card_generate_back(card, card_options);
-        $('#preview-container').html(front + "\n" + back);
+        // var back = card_generate_back(card, card_options);
+        $('#preview-container').html(front + "\n");
     }
     local_store_save();
 }

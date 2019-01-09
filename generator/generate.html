@@ -90,9 +90,10 @@
                         <label for="page-size" class="col-sm-4 control-label">Page Size</label>
                         <div class="col-sm-8">
                             <select class="form-control" id="page-size" data-option="page_size">
-                                <option value="A4" selected>A4</option>
+                                <option value="A4" >A4</option>
                                 <option value="Letter">US letter</option>
                                 <option value="25x35">2.5&quot; x 3.5&quot;</option>
+                                <option value="30x50" selected>3.0&quot; x 5.0&quot;</option>
                             </select>
                         </div>
                     </div>
@@ -101,8 +102,8 @@
                         <div class="col-sm-8">
                             <select class="form-control" id="card-size" data-option="card_size">
                                 <option value="225x35">2.25&quot; x 3.5&quot; (Bridge)</option>
-                                <option value="25x35" selected>2.5&quot; x 3.5&quot; (Poker)</option>
-                                <option value="35x50">3.5&quot; x 5.0&quot;</option>
+                                <option value="25x35" >2.5&quot; x 3.5&quot; (Poker)</option>
+                                <option value="30x50" selected>3.0&quot; x 5.0&quot;</option>
                                 <option value="75x50">7.5&quot; x 5.0&quot;</option>
                             </select>
                         </div>
@@ -110,21 +111,21 @@
                     <div class="form-group">
                         <label for="card-size" class="col-sm-4 control-label">Cards/page</label>
                         <div class="col-sm-3">
-                            <input type="text" id="page-rows" class="form-control" data-option="page_rows" value="3">
+                            <input type="text" id="page-rows" class="form-control" data-option="page_rows" value="1">
                         </div>
                         <div class="col-sm-2">
                             <p class="form-control-static">x</p>
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" id="page-columns" class="form-control" data-option="page_columns" value="3">
+                            <input type="text" id="page-columns" class="form-control" data-option="page_columns" value="1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="card-arrangement" class="col-sm-4 control-label">Arrangement</label>
                         <div class="col-sm-8">
                             <select class="form-control" id="card-arrangement" data-option="card_arrangement">
-                                <option value="doublesided" selected>Double sided printing</option>
-                                <option value="front_only">Front side only</option>
+                                <option value="doublesided" >Double sided printing</option>
+                                <option value="front_only" selected>Front side only</option>
                                 <option value="side_by_side">Side by side</option>
                             </select>
                         </div>
@@ -134,7 +135,7 @@
                         <div class="col-sm-8">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" checked id="rounded-corners" data-option="rounded_corners" value="1"> Rounded card corners
+                                    <input type="checkbox" checked id="rounded-corners" data-option="rounded_corners" value="0"> Rounded card corners
                                 </label>
                             </div>
                         </div>
@@ -446,13 +447,16 @@ else {
                         Return false to remove the current card from the deck.
                     </p>
                     <textarea class="form-control" rows="10" id="filter-function" wrap="off">
-// Color all spell cards yellow
+// Color all spell cards gray
 if (card_has_tag(card, "spell")) {
-    card.color = "yellow";
+    card.color = "gray";
 }
 
-// Remove all creature cards
-if (card_has_tag(card, "creature")) {
+// Filter by Class and Level
+// Add & to the start of a tag to require that tag
+// Add | to the start of a tag to allow it, also no special character will do
+// Add ! to the start of a tag to disallow it.
+if (!card_complex_filter(card, ["&cleric", "|level 1"])) {
     return false;
 }
                     </textarea>
