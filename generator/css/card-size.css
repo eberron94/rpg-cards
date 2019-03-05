@@ -47,6 +47,11 @@ page[size="30x50"] {
     height: 5.0in;
 }
 
+page[size="40x60"] {
+    width: 4.0in;
+    height: 6.0in;
+}
+
 /* Default card size */
 .card {
     width:2.5in;
@@ -73,13 +78,24 @@ page[size="30x50"] {
     height: 1in;
 }
 
-/* Poker / Magic card size */
+/* Index card size */
 .card-size-30x50 {
     width:3.0in;
     min-width:3.0in;
     height:5.0in;
 }
 .card-size-30x50 .card-back-icon {
+    width: 1.5in;
+    height: 1.5in;
+}
+
+/* Large Index card size */
+.card-size-40x60 {
+    width:4.0in;
+    min-width:4.0in;
+    height:6.0in;
+}
+.card-size-40x60 .card-back-icon {
     width: 1.5in;
     height: 1.5in;
 }

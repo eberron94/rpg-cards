@@ -8,11 +8,11 @@ function card_default_options() {
         default_color: "black",
         default_icon: "ace",
         default_title_size: "13",
-        page_size: "30x50",
+        page_size: "40x60",
         page_rows: 1,
         page_columns: 1,
         card_arrangement: "front_only",
-        card_size: "30x50",
+        card_size: "40x60",
         card_count: null,
         icon_inline: true,
         rounded_corners: false
@@ -499,6 +499,8 @@ function card_pages_generate_style(options) {
         case "A5": size = "A5 portrait"; break;
         case "Letter": size = "letter portrait"; break;
         case "25x35": size = "2.5in 3.5in"; break;
+        case "30x50": size = "3.0in 5.0in"; break;
+        case "40x60": size = "4.0in 6.0in"; break;
         default: size = "auto";
     }
 
