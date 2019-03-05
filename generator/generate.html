@@ -208,11 +208,28 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="default-body-text-size" class="col-sm-2 control-label">Body Text</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="default-body-text-size">
+                                <option value="11">11pt font</option>
+                                <option value="10">10pt font</option>
+                                <option value="9">9pt font</option>
+                                <option value="8" selected>8pt font</option>
+                                <option value="7.5">7.5pt font</option>
+                                <option value="7">7pt font</option>
+                                <option value="6.5">6.5pt font</option>
+                                <option value="6">6pt font</option>
+                                <option value="5">5pt font</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h3>Apply defaults to all cards</h3>
+                    <div class="form-group">
                         <div class="col-sm-6">
                             <button type="button" class="btn btn-primary btn-block" id="button-apply-color">Apply color</button>
                         </div>
                         <div class="col-sm-6">
-                            <button type="button" class="btn btn-primary btn-block" id="button-apply-font">Apply title font</button>
+                            <button type="button" class="btn btn-primary btn-block" id="button-apply-title-font">Apply title font</button>
                         </div>
                     </div>
                     <div class="form-group">
@@ -221,6 +238,11 @@
                         </div>
                         <div class="col-sm-6">
                             <button type="button" class="btn btn-primary btn-block" id="button-apply-icon-back">Apply back icon</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-primary btn-block" id="button-apply-body-text-font">Apply body font</button>
                         </div>
                     </div>
                 </form>
@@ -270,6 +292,23 @@
                                 <option value="12">12pt font</option>
                                 <option value="11">11pt font</option>
                                 <option value="10">10pt font</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-body-text-size" class="col-sm-2 control-label">Body Text</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="card-body-text-size" data-property="body_text_size">
+                                <option value="" selected>default font</option>
+                                <option value="11">11pt font</option>
+                                <option value="10">10pt font</option>
+                                <option value="9">9pt font</option>
+                                <option value="8">8pt font</option>
+                                <option value="7.5">7.5pt font</option>
+                                <option value="7">7pt font</option>
+                                <option value="6.5">6.5pt font</option>
+                                <option value="6">6pt font</option>
+                                <option value="5">5pt font</option>
                             </select>
                         </div>
                     </div>
@@ -379,7 +418,7 @@
                         <li>Some RPG systems are protected by copyright. Even if some spell/item data is freely available, it does not mean you may redistribute cards containing such data.</li>
                         <li>If you find a bug or have a feature request, post them at the <a href="https://github.com/crobi/rpg-cards/issues">Github project site</a>.</li>
                         <li>
-                            The user interface consists of three columns: 
+                            The user interface consists of three columns:
                             <img alt="help" src="img/help/help.png" style="max-width:95%; display:block; padding: 5px; margin: 10px 0 10px 0; border: 1px solid #ebebeb; box-shadow: 0 0 5px #ebebeb;"/>
                             The left column contains the menu and global settings.
                             In the middle menu, you can select and edit individual cards.

@@ -177,6 +177,7 @@ function ui_update_selected_card() {
     if (card) {
         $("#card-title").val(card.title);
         $("#card-title-size").val(card.title_size);
+        $("#card-body-text-size").val(card.body_text_size);
         $("#card-count").val(card.count);
         $("#card-icon").val(card.icon);
         $("#card-icon-back").val(card.icon_back);
@@ -187,6 +188,7 @@ function ui_update_selected_card() {
     } else {
         $("#card-title").val("");
         $("#card-title-size").val("");
+        $("#card-body-text-size").val("");
         $("#card-count").val(1);
         $("#card-icon").val("");
         $("#card-icon-back").val("");
@@ -384,6 +386,11 @@ function ui_change_default_title_size() {
     ui_render_selected_card();
 }
 
+function ui_change_default_body_text_size() {
+    card_options.default_body_text_size = $(this).val();
+    ui_render_selected_card();
+}
+
 function ui_change_default_icon_size() {
     card_options.icon_inline = $(this).is(':checked');
     ui_render_selected_card();
@@ -447,6 +454,19 @@ function ui_apply_default_icon_back() {
     ui_render_selected_card();
 }
 
+function ui_apply_default_title_font() {
+    for (var i = 0; i < card_data.length; ++i) {
+        card_data[i].title_size = card_options.default_title_size;
+    }
+    ui_render_selected_card();
+}
+
+function ui_apply_default_body_text_font() {
+    for (var i = 0; i < card_data.length; ++i) {
+        card_data[i].body_text_size = card_options.default_body_text_size;
+    }
+    ui_render_selected_card();
+}
 
 //Adding support for local store
 function local_store_save() {
@@ -510,11 +530,14 @@ $(document).ready(function () {
     $("#button-apply-color").click(ui_apply_default_color);
     $("#button-apply-icon").click(ui_apply_default_icon);
     $("#button-apply-icon-back").click(ui_apply_default_icon_back);
+    $("#button-apply-title-font").click(ui_apply_default_title_font);
+    $("#button-apply-body-text-font").click(ui_apply_default_body_text_font);
 
     $("#selected-card").change(ui_update_selected_card);
 
     $("#card-title").change(ui_change_card_title);
     $("#card-title-size").change(ui_change_card_property);
+    $("#card-body-text-size").change(ui_change_card_property);
     $("#card-icon").change(ui_change_card_property);
     $("#card-count").change(ui_change_card_property);
     $("#card-icon-back").change(ui_change_card_property);
@@ -537,6 +560,7 @@ $(document).ready(function () {
     $("#default-color").change(ui_change_default_color);
     $("#default-icon").change(ui_change_default_icon);
     $("#default-title-size").change(ui_change_default_title_size);
+    $("#default-body-text-size").change(ui_change_default_body_text_size);
     $("#small-icons").change(ui_change_default_icon_size);
 
     $(".icon-select-button").click(ui_select_icon);
