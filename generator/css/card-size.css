@@ -52,6 +52,11 @@ page[size="40x60"] {
     height: 6.0in;
 }
 
+page[size="60x40"] {
+    width: 6.0in;
+    height: 4.0in;
+}
+
 /* Default card size */
 .card {
     width:2.5in;
@@ -96,6 +101,17 @@ page[size="40x60"] {
     height:6.0in;
 }
 .card-size-40x60 .card-back-icon {
+    width: 1.5in;
+    height: 1.5in;
+}
+
+/* Landscape Large Index card size */
+.card-size-60x40 {
+    width:6.0in;
+    min-width:6.0in;
+    height:4.0in;
+}
+.card-size-60x40 .card-back-icon {
     width: 1.5in;
     height: 1.5in;
 }

@@ -522,6 +522,7 @@ function card_pages_generate_style(options) {
         case "25x35": size = "2.5in 3.5in"; break;
         case "30x50": size = "3.0in 5.0in"; break;
         case "40x60": size = "4.0in 6.0in"; break;
+        case "60x40": size = "6.0in 4.0in"; break;
         default: size = "auto";
     }
 
