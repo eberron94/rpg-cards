@@ -26,7 +26,7 @@
 }
 
 .card-back {
-/*     background-color: white; */
+    background-color: white;
     border-radius: 4mm;
     border-color: inherit;
     margin: 3mm;
@@ -50,11 +50,13 @@
 .card-back-icon {
     width: 1in;
     height: 1in;
-    border: 4mm solid;
+    /* border: 4mm solid;
     border-color: inherit;
-    border-radius: 4mm;
+    border-radius: 4mm; */
     background-repeat: no-repeat;
     background-size: contain;
+    -webkit-filter: invert(1);
+   filter: invert(1);
 }
 
 .card-title-icon {

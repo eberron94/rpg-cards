@@ -9,11 +9,11 @@ function card_default_options() {
         default_icon: "ace",
         default_title_size: "13",
         default_body_text_size: "8",
-        page_size: "40x60",
-        page_rows: 1,
-        page_columns: 1,
-        card_arrangement: "front_only",
-        card_size: "40x60",
+        page_size: "Letter",
+        page_rows: 2,
+        page_columns: 2,
+        card_arrangement: "doublesided",
+        card_size: "43x55",
         card_count: null,
         icon_inline: true,
         rounded_corners: false
@@ -105,7 +105,7 @@ function card_data_color_front(card_data, options) {
 }
 
 function card_data_color_back(card_data, options) {
-    return card_data.color_back || card_data.color || options.default_color || "black";
+    return card_data.color_back || card_data.color || options.default_color || "white";
 }
 
 function card_data_icon_front(card_data, options) {
@@ -376,6 +376,12 @@ function card_generate_color_style(color, options) {
     return 'color:' + color + '; border-color:' + color + '; background-color:' + color;
 }
 
+function card_generate_background_color_style(color, options) {
+    //return 'style="color:' + color + '; border-color:' + color + '; background-color:' + color + '"';
+    //TODO
+    return 'color:' + color + '; border-color:' + color + '; background-color:' + color;
+}
+
 function card_generate_color_gradient_style(color, options) {
     return 'style="background: radial-gradient(ellipse at center, white 20%, ' + color + ' 120%)"';
 }
@@ -397,14 +403,14 @@ function card_generate_front(data, options) {
 
 function card_generate_back(data, options) {
     var color = card_data_color_back(data, options);
-    var style_color = card_generate_color_style(color, options);
+    var style_color = card_generate_background_color_style(color, options);
     var url = data.background_image;
     var background_style = "";
     if (url) {
         background_style = 'style = "background-image: url(&quot;' + url + '&quot;); background-size: contain; background-position: center; background-repeat: no-repeat;"';
     }
     else {
-        background_style = card_generate_color_gradient_style(color, options);
+        // background_style = card_generate_color_gradient_style(color, options);
     }
     var icon = card_data_icon_back(data, options);
 
@@ -415,8 +421,8 @@ function card_generate_back(data, options) {
     result += '  <div class="card-back" ' + background_style + '>';
     if (!url) {
         result += '    <div class="card-back-inner">';
-        //result += '      <div class="card-back-icon icon-' + icon + '" ' + style_color + '></div>';
-        result += '<div class="card card-size-' + options.card_size + '" style="' + style_color + '">';
+        result += '      <div class="card-back-icon icon-' + icon + '" ' /*+ style_color*/ + '></div>';
+        // result += '<div class="card card-size-' + options.card_size + '" style="' + style_color + '">';
         result += '    </div>';
     }
     result += '  </div>';
@@ -523,6 +529,8 @@ function card_pages_generate_style(options) {
         case "30x50": size = "3.0in 5.0in"; break;
         case "40x60": size = "4.0in 6.0in"; break;
         case "60x40": size = "6.0in 4.0in"; break;
+        case "43x55": size = "4.25in 5.5in"; break;
+        case "55x43": size = "5.5in 4.25in"; break;
         default: size = "auto";
     }
 
