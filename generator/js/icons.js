@@ -2855,4 +2855,15 @@ var class_icon_names = [
     "class-wizard"
 ];
 
-icon_names = icon_names.concat(class_icon_names);
+var spell_icon_names = [
+    "spell-abjuration",
+    "spell-conjuration",
+    "spell-divination",
+    "spell-enchantment",
+    "spell-evocation",
+    "spell-illusion",
+    "spell-necromancy",
+    "spell-transmutation"
+];
+
+icon_names = icon_names.concat(class_icon_names).concat(spell_icon_names);

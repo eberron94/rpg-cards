@@ -10,3 +10,12 @@
 .icon-class-sorcerer { background-image: url(../img/classes/AV-sorcerer.png);}
 .icon-class-warlock { background-image: url(../img/classes/AV-warlock.png);}
 .icon-class-wizard { background-image: url(../img/classes/AV-wizard.png);}
+
+.icon-spell-abjuration { background-image: url(../img/spells/spell-abjuration.png);}
+.icon-spell-conjuration { background-image: url(../img/spells/spell-conjuration.png);}
+.icon-spell-divination { background-image: url(../img/spells/spell-divination.png);}
+.icon-spell-enchantment { background-image: url(../img/spells/spell-enchantment.png);}
+.icon-spell-evocation { background-image: url(../img/spells/spell-evocation.png);}
+.icon-spell-illusion { background-image: url(../img/spells/spell-illusion.png);}
+.icon-spell-necromancy { background-image: url(../img/spells/spell-necromancy.png);}
+.icon-spell-transmutation { background-image: url(../img/spells/spell-transmutation.png);}
