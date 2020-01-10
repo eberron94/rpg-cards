@@ -245,6 +245,27 @@
     padding: 0;
 }
 
+.card-table {
+    width: 100%;
+    border: 2px solid;
+}
+
+.card-table-header {
+    text-align: center;
+    padding: 0;
+}
+
+.card-table-row {
+    text-align: center;
+    padding: 0;
+}
+
+.card-table-cell {
+    text-align: center;
+    padding: 0;
+    border-bottom: 1px solid;
+}
+
 .card-bullet-line {
     font-size: inherit;
     color: black;
